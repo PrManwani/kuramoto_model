@@ -1,3 +1,6 @@
+%To note differenc between mean field coupling and actual model
+%r is the mean field  coupling parameter
+%K is the coupling constant
 clear;
 N=80;
 T=2000;
@@ -42,5 +45,7 @@ for t=2:T
 end 
 t = 1:1:T;
 b = ((theta_dot(:,1)')); 
+figure(1)
 plot(t,b);
+figure(2)
 %plot(t,r);
