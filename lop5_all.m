@@ -74,8 +74,11 @@ K = 1:1:500;
 
 
 figure(1)
+title('theta_dot vs K')
 plot(K,theta_dot_k)
 figure(2)
+title('theta vs K')
 plot(K,theta_k)
 figure(3)
+title('r vs K')
 plot(K,r_final)
