@@ -34,13 +34,12 @@ end
 for t=2:T
     for i=1:N
         k(i) = K(mod(i+7,8) + 1);
-        for j = 1:N
-            theta_dot(t,i) = (w(i) + (k(i)/N)*sin(theta(t-1,j)-theta(t-1,i)));
-            
-        end
-        theta(t,i) = theta(t-1,i) + tau*theta_dot(t,i);
+        theta(t,i) = theta(t-1,i) + tau*theta_dot(t-1,i);
         theta(t,i) = mod(theta(t,i),2*pi);
-    end
+            for j = 1:N
+                theta_dot(t,i) = (w(i) + (K/N)*sin(theta(t,j)-theta(t,i)));         
+            end
+        end
     for i =1:N
         for j = 1:N
         r_cos(t) = r_cos(t) + (1/N)*cos(theta(t,j)-theta(t,i));
