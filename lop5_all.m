@@ -35,12 +35,11 @@ for K = 1:1:500
     
     for t=2:T
         for i=1:N
+        theta(t,i) = theta(t-1,i) + tau*theta_dot(t-1,i);
+        theta(t,i) = mod(theta(t,i),2*pi);
             for j = 1:N
-                theta_dot(t,i) = (w(i) + (K/N)*sin(theta(t-1,j)-theta(t-1,i)));
-                
+                theta_dot(t,i) = (w(i) + (K/N)*sin(theta(t,j)-theta(t,i)));         
             end
-            theta(t,i) = theta(t-1,i) + tau*theta_dot(t,i);
-            theta(t,i) = mod(theta(t,i),2*pi);
         end
         for i =1:N
             for j = 1:N
