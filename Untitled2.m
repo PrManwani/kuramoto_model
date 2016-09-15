@@ -22,7 +22,7 @@ while(K<=1000)
     r_sin = zeros(1,T);
     r = zeros(1,T);
     w = random('Normal',0,1,1,N);
-    a = random('Normal',0,1,1,N);
+    %a = random('Normal',0,1,1,N);
     
     for i=1:N
         theta(1,i)=a(i);
